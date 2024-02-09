@@ -19,7 +19,7 @@ sudo apt-get install -y ca-certificates curl gnupg lsb-release
 - Add Docker’s official GPG key
 ```bash
 mkdir -p /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 ```
 
 -  Use the following command to set up the repository
@@ -87,3 +87,9 @@ sudo iptables -P INPUT ACCEPT
 sudo iptables -P FORWARD ACCEPT
 sudo iptables -P OUTPUT ACCEPT
 ```
+
+> [!warning]
+> Above Iptables rules **can break** some active connections such as SSH.
+> Make sure to restart the firewall after paste this commands.
+
+
